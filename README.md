@@ -1,28 +1,9 @@
-# syncstorage-rs-docker
+Docker Compose configuration to self-host a Firefox sync server based on [this](https://github.com/mozilla-services/syncstorage-rs/tree/master) and forked respository.
 
-A simple Docker container and Docker Compose configuration to get started with [mozilla-services/syncstorage-rs](https://github.com/mozilla-services/syncstorage-rs) to self-host a Firefox sync server.
-
-I didn't have much luck with the existing documentation and wrote this for my own infrastructure. There's no guarantee it will work for you.
-
-## Getting started
-
-So far these steps have been shown to work on Debian based distros including Raspbian and Debian Bullseye.
-
-To get started clone this repository. You will need to have [Docker](https://docs.docker.com/engine/install/) and [Docker Compose](https://docs.docker.com/compose/install/) installed.
-
-### Environment Variables
-
-The Docker Compose file makes use of environment variables. To configure them, make a copy of example.env
-
-```bash
-cp example.env .env
-```
+Update ./data/config/config.net to add init-file path
 
 Now edit the new `.env` file to add configuration and secrets. Keep in mind the `SYNC_MASTER_SECRET` and `METRICS_HASH_SECRET` require 64 characters.
 
-### Initial Run
-
-```bash
 docker compose up -d --build && docker compose logs -f
 ```
 
