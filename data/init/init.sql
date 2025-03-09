@@ -1,0 +1,2 @@
+CREATE DATABASE IF NOT EXISTS tokenserver;
+GRANT ALL PERMISSIONS FOR tokenserver TO 'user'@'%';
